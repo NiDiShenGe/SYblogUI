@@ -5,10 +5,7 @@
                 <Header/>    
             </el-header>
          <el-container>
-          <el-aside width="200px">
-            
-             </el-aside>
-             <el-main>
+             <el-main style="padding: 0px">
                 <RouterView></RouterView>
              </el-main>
          </el-container>
@@ -28,10 +25,13 @@ import Footer from './components/Footer.vue';
 
 <style scoped>
    .myHeader{
-    background-color:grey;
-    height:50px;
+    background-color:#86B99B;
+    height:8vh;
+    box-shadow: 10px 10px 10px #d1d9e6, -10px -10px 10px #f9f9f9;
    }
   .myFooter{
-    height:100px
+    height:6vh;
+    background-color: #86B99B;
+    box-shadow: 10px 10px 10px #d1d9e6, -10px -10px 10px #f9f9f9;
   }
 </style>
