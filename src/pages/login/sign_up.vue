@@ -12,7 +12,7 @@
     </el-form-item>
     <br>
     <el-form-item>
-      <el-button color="#829D93"style="margin-left: 10vh;padding-left: 30px;padding-right: 30px;color:gray" @click="submitForm">注册</el-button>
+      <el-button color="#829D93"style="margin-left: 30%;padding-left: 30px;padding-right: 30px;color:gray;" @click="submitForm">注册</el-button>
     </el-form-item>
    </el-form>
   </div> 
@@ -58,4 +58,8 @@
  .container{
     margin:5vh 15vh auto 15vh;
   }
+  .el-button:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease-in-out;
+}
 </style>

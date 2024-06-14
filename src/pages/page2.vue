@@ -64,16 +64,20 @@ const submitForm = async () => {
   background-color: #f5f5f5;
   flex-grow: 1;
   min-height: 86vh;
+  background-color: #dae4d9;
 }
 
 .form {
   min-height: 60vh;
   padding: 20px;
-  background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   width:120vh;
   margin-top: 5vh;  
   margin-bottom: 5vh;
+  background-color: #F0F5F2;
+    box-shadow: 10px 10px 10px #d1d9e6, -10px -10px 10px #d1d9e6;
+    border-radius: 20px;
+    overflow: hidden;
 }
 
 .content-item {

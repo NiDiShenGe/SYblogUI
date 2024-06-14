@@ -1,9 +1,7 @@
 <template>
     <div class="app">
         <el-container>
-            <el-header  class="myHeader">
-                <Header/>    
-            </el-header>
+            <Header></Header>
          <el-container>
              <el-main style="padding: 0px">
                 <RouterView></RouterView>
@@ -32,6 +30,5 @@ import Footer from './components/Footer.vue';
   .myFooter{
     height:6vh;
     background-color: #86B99B;
-    box-shadow: 10px 10px 10px #d1d9e6, -10px -10px 10px #f9f9f9;
   }
 </style>
