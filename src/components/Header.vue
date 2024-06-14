@@ -17,7 +17,7 @@
 
             </el-col>
             <el-col :span="1" style="margin: 10px;">
-                <el-button :class="activePage === 'loginPage' ? 'active' : 'unactive'" @click="goToPage('loginPage')"style="color:grey">登录/注册</el-button>
+                <el-button :class="activePage === 'signIn' ? 'active' : 'unactive'" @click="goToPage('signIn')"style="color:grey">登录/注册</el-button>
             </el-col>
         </el-row>
     </div>
@@ -29,7 +29,7 @@
     import { useRouter } from 'vue-router';
     import { ref } from 'vue';
 
-    const activePage = ref('');
+    const activePage = ref('firstPage');
 
     function goToPage(pageName:string){
         activePage.value = pageName;
@@ -53,4 +53,7 @@
     background-color: #829D93;
     padding:  30px 30px 30px 30px
   }
+  .unactive:hover, .active:hover {
+  transform: scale(1.1);
+}
 </style>

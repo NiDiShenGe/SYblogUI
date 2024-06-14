@@ -1,15 +1,14 @@
 <template>
   <div class="login">
-    
      <div class="main">
-      <Sign_in></Sign_in>
-      <a style="margin-left: 50vh;">没有密码?点此注册</a>
+      <RouterLink :to="{name:'signUp'}" style="margin-left: 2vh;color:gray">我要注册</RouterLink>
+      <RouterLink :to="{name:'signIn'}" style="margin-left: 2vh;color:gray">我要登录</RouterLink>
+      <RouterView></RouterView>
      </div>
   </div> 
 </template>
 
 <script lang="ts" setup name="">
-import Sign_in from './sign_in.vue';
 
  
 
@@ -37,7 +36,7 @@ import Sign_in from './sign_in.vue';
     min-height: 120px;
     padding: 25px;
     background-color: #F0F5F2;
-    box-shadow: 10px 10px 10px #d1d9e6, -10px -10px 10px #f9f9f9;
+    box-shadow: 10px 10px 10px #d1d9e6, -10px -10px 10px #d1d9e6;
     border-radius: 20px;
     overflow: hidden;
     margin:auto;

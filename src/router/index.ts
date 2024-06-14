@@ -11,6 +11,10 @@ const router =createRouter({
     history:createWebHistory(),
     routes:[
         {
+            path:'/',
+            redirect:'page1'
+        },
+        {
             name:'firstPage',
             path:'/page1',
             component:Page1

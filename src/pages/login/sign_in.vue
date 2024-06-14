@@ -7,15 +7,14 @@
        <el-input v-model="passward" placeholder="输入你的密码" clearable   show-password/>
     </el-form-item>
     <el-form-item label="验证码">
-       <el-input v-model="check" placeholder="输入验证码" sclearable  style="width: 12vh;"/>
+       <el-input v-model="check" placeholder="输入验证码" sclearable  style="width: 10vh;"/>
        <hr>
         <el-image :src="src" slot = placeholder></el-image>
     </el-form-item>
     <el-form-item>
-      <br>
     </el-form-item>
     <el-form-item>
-      <el-button color="#829D93"  style="margin-left: 6vh;padding-left: 30px;padding-right: 30px;color:gray">登录</el-button>
+      <el-button color="#829D93"  style="margin-left: 10vh;padding-left: 30px;padding-right: 30px;color:gray">登录</el-button>
     </el-form-item>
   </el-form>
 </template>
@@ -31,6 +30,6 @@ const src=''
 
 <style scoped>
   .container{
-    margin:5vh 20vh auto 20vh;
+    margin:5vh 15vh auto 15vh;
   }
 </style>

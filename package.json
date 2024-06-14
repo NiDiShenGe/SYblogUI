@@ -13,6 +13,7 @@
   "dependencies": {
     "element-plus": "^2.7.5",
     "mitt": "^3.0.1",
+    "qc": "^0.0.1",
     "vue": "^3.4.21",
     "vue-router": "^4.3.3"
   },
