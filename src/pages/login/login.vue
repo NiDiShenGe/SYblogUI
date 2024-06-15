@@ -31,7 +31,7 @@
 .main{
     position: static;
     width: 30%;
-    height: 30%;
+    height: 35%;
     min-width: 20%;
     min-height: 12%;
     padding: 2.5%;
