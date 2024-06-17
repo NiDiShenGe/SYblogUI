@@ -11,17 +11,19 @@
         <el-input v-model="form.title" placeholder="请输入标题" clearable ></el-input>
       </el-form-item>
       <el-form-item label="正文" class="content-item">
-        <el-input type="textarea" v-model="form.content" :autosize="{ minRows: 10}" placeholder="请输入正文" clearable ></el-input>
+       <Editor/>
       </el-form-item>
       <el-form-item>
         <el-button type="primary" native-type="submit" class="submit-button">提交</el-button>
       </el-form-item>
-    </el-form>
+    </el-form> 
+    
   </div>
 </template>
 
 <script lang="ts" setup>
 import { ref } from 'vue'
+import Editor from "@/components/Editor.vue";
 
 const form = ref({
   author: '',
@@ -29,7 +31,6 @@ const form = ref({
   title: '',
   content: ''
 })
-
 const submitForm = async () => {
   const response = await fetch('/api/blogs', {
     method: 'POST',
@@ -52,6 +53,7 @@ const submitForm = async () => {
     content: ''
   }
 }
+
 </script>
 
 <style scoped>

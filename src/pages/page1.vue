@@ -24,7 +24,7 @@
 <script lang="ts" setup name="firstPage">
   import { ref, onMounted } from 'vue';
   import axios from 'axios';
-  import BackGroundImage from '../assets/images/background.png';
+  import BackGroundImage from '../assets/images/background.jpg';
   
 
   const posts = ref([
@@ -79,7 +79,7 @@
   .container {
     display: flex;
     margin:0px;
-    background-image: url("../assets/images/background.png");
+    background-image: url("../assets/images/background.jpg");
     width: 100%;
     height: 100%;
     background-size: cover;

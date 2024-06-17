@@ -11,12 +11,18 @@
     "type-check": "vue-tsc --build --force"
   },
   "dependencies": {
+    "@tinymce/tinymce-vue": "^4.0.7",
     "axios": "^1.7.2",
+    "editor.md": "^1.5.0",
     "element-plus": "^2.7.5",
+    "mavon-editor": "^2.10.4",
     "mitt": "^3.0.1",
     "qc": "^0.0.1",
     "vue": "^3.4.21",
-    "vue-router": "^4.3.3"
+    "vue-quill-editor": "^3.0.6",
+    "vue-router": "^4.3.3",
+    "vue2-editor": "^2.10.3",
+    "vue3-editor": "^0.1.1"
   },
   "devDependencies": {
     "@tsconfig/node20": "^20.1.4",
