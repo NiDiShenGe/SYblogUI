@@ -19,6 +19,8 @@
     "mitt": "^3.0.1",
     "qc": "^0.0.1",
     "vue": "^3.4.21",
+    "vue-baberrage": "^3.2.4",
+    "vue-cookies": "^1.8.4",
     "vue-quill-editor": "^3.0.6",
     "vue-router": "^4.3.3",
     "vue2-editor": "^2.10.3",

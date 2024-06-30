@@ -1,4 +1,5 @@
 <template>
+  <back-to-top></back-to-top>
   <div class="container"@mousemove="handleMouseMove" v-bind:style="{ backgroundPosition: `${x}px ${y}px` }">
     <div class="sidebar">
       <h2 class="page1" style="text-align: center">博客列表</h2>
@@ -25,7 +26,7 @@
   import { ref, onMounted } from 'vue';
   import axios from 'axios';
   import BackGroundImage from '../assets/images/background.jpg';
-  
+  import BackToTop from '@/components/BackToTop.vue';
 
   const posts = ref([
     { title: '加载中...', author: '加载中...', content: '加载中...加载中...加载中...加载中...加载中...加载中...加载中...加载中...加载中...加载中...加载中...加载中...加载中...加载中...加载中...加载中...加载中...加载中...', tags: ['加载中...'] },
