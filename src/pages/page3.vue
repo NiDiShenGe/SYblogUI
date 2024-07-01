@@ -104,9 +104,6 @@ function getRandomColor() {
     background-size: cover;
     height: 86vh;
   }
-  .content{
-
-  }
   @keyframes move {
   0% {
     transform: translateX(100vw);

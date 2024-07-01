@@ -1,16 +1,13 @@
 <template>
   <div class="container">
     <el-form :model="form" @submit.native.prevent="submitForm" class="form">
-      <el-form-item label="作者" >
-        <el-input v-model="form.author" placeholder="请输入作者名" clearable style="width: 85%;margin: auto;"></el-input>
-      </el-form-item>
       <el-form-item label="标签">
-        <el-input v-model="form.tags" placeholder="请输入标签" clearable style="width: 85%;margin: auto;"></el-input>
+        <el-input v-model="form.tags" placeholder="请输入标签" clearable style="margin: auto;"></el-input>
       </el-form-item>
       <el-form-item label="标题">
-        <el-input v-model="form.title" placeholder="请输入标题" clearable style="width: 85%;margin: auto;"></el-input>
+        <el-input v-model="form.title" placeholder="请输入标题" clearable style="margin: auto;"></el-input>
       </el-form-item>
-      <el-form-item label="正文" class="content-item">
+      <el-form-item label="正文" class="content-item" >
        <Editor/>
       </el-form-item>
       <el-form-item>

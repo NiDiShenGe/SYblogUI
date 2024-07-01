@@ -3,6 +3,7 @@ import { createRouter,createWebHistory } from "vue-router";
 import Page1 from "@/pages/page1.vue";
 import Page2 from "@/pages/page2.vue";
 import Page3 from "@/pages/page3.vue";
+import Page4 from "@/pages/page4.vue";
 import MyPage from "@/pages/mypage.vue";
 import Login from "@/pages/login/login.vue";
 import Sign_in from "@/pages/login/sign_in.vue";
@@ -29,6 +30,11 @@ const router =createRouter({
             name:'thirdPage',
             path:'/page3',
             component:Page3
+        },
+        {
+            name:'fourthPage',
+            path:'/page4',
+            component:Page4
         },
         {
             name:'loginPage',

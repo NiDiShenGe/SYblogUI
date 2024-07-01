@@ -12,8 +12,12 @@
       </el-menu>
     </div>
     <div class="content">
+     
       <el-card style="  background-color: rgba(255, 255, 255, 0.5);">
-        <h2>{{ selectedPost.title }}</h2>
+        <h2><img class="author-avatar" :src="selectedPost.avatarUrl" alt="作者头像"></h2>
+        <h2>{{ selectedPost.title }} 
+          
+        </h2>
         <h3>作者：{{ selectedPost.author }}</h3>
         <div>标签：{{ selectedPost.tags.join(', ') }}</div>
         <div v-html="selectedPost.content"></div>
@@ -29,7 +33,7 @@
   import BackToTop from '@/components/BackToTop.vue';
 
   const posts = ref([
-    { title: '加载中...', author: '加载中...', content: '加载中...加载中...加载中...加载中...加载中...加载中...加载中...加载中...加载中...加载中...加载中...加载中...加载中...加载中...加载中...加载中...加载中...加载中...', tags: ['加载中...'] },
+    { title: '加载中....', author: '加载中...', content: '加载中...加载中...加载中...加载中...加载中...加载中...加载中...加载中...加载中...加载中...加载中...加载中...加载中...加载中...加载中...加载中...加载中...加载中...', tags: ['加载中...'],avatarUrl: 'https://avatars.githubusercontent.com/u/1?v=4'},
     { title: '加载中...1', author: '加载中...1', content: '加载中...1', tags: ['加载中...1'] },
     { title: '加载中...2', author: '加载中...2', content: '加载中...2', tags: ['加载中...2'] },
     { title: '加载中...', author: '加载中...', content: '加载中...', tags: ['加载中...'] },
@@ -47,13 +51,6 @@
     { title: '加载中...', author: '加载中...', content: '加载中...', tags: ['加载中...'] },
     { title: '加载中...1', author: '加载中...1', content: '加载中...1', tags: ['加载中...1'] },
     { title: '加载中...2', author: '加载中...2', content: '加载中...2', tags: ['加载中...2'] },
-    { title: '加载中...', author: '加载中...', content: '加载中...', tags: ['加载中...'] },
-    { title: '加载中...1', author: '加载中...1', content: '加载中...1', tags: ['加载中...1'] },
-    { title: '加载中...2', author: '加载中...2', content: '加载中...2', tags: ['加载中...2'] },
-    { title: '加载中...', author: '加载中...', content: '加载中...', tags: ['加载中...'] },
-    { title: '加载中...1', author: '加载中...1', content: '加载中...1', tags: ['加载中...1'] },
-    { title: '加载中...2', author: '加载中...2', content: '加载中...2', tags: ['加载中...2'] },
-    
 ]);
   const selectedPost = ref(posts.value[0]);
   const selectedPostIndex = ref(0);
@@ -107,5 +104,12 @@
   }
   .page1 {
     color:gray
+  }
+  .author-avatar {
+    width: 10vh;
+    height: 10vh;
+    border-radius: 50%; 
+    margin-top: 0vh;
+    float: right;
   }
 </style>
