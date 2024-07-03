@@ -58,8 +58,6 @@
   .unactive:hover, .active:hover {
   transform: scale(1.1);
 }
-.el-menu{
-}
 .spacer {
   margin-left: 59vh;
 }
