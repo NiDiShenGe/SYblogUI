@@ -1,5 +1,6 @@
 <template>
   <div class="mypage">
+    <BackToTop></BackToTop>
     <div class="page">
      <div class="firstrow"> 
       <div class="uid">
@@ -40,6 +41,8 @@
 <script lang="ts" setup name="MyPage"> 
   import { ref, onMounted } from 'vue';
   import axios from 'axios';
+  import component from 'element-plus/es/components/tree-select/src/tree-select-option.mjs';
+  import BackToTop from '@/components/BackToTop.vue';
   interface Person {   //定义Person接口
   account: string;
   id: string;
@@ -58,12 +61,14 @@
     title: string;
     content: string;
   }
+  const componentKey = ref(0);
   const blogs=ref<Blog[]>([
     {id:'1',title:'为什么要玩原神',content:' 歌德在不经意间这样说过，读一本好书，就如同和一个高尚的人在交谈。我希望诸位也能好好地体会这句话。 我们一般认为，抓住了问题的关键，\n其他一切则会迎刃而解。 老子在不经意间这样说过，知人者智，自知者明。胜人者有力，自胜者强。我希望诸位也能好好\n地体会这句话。 而这些并不是完全重要，更加重要的问题是， 了解清楚为什么要玩原神到底是一种怎么样的存在，是解决一切问题的关键。 就我个人来说，为什么要玩原神对我的意义，不能不说非常重大。 为什么要玩原神的发生，到底需要如何做到，不为什么要玩原神的发生，又会如何产生。 为什么要玩原神因何而发生?要想清楚，为什么要玩原神，到底是一种怎么样的存在。 我们都知道，只要有意义，那么就必须慎重考虑。 为什么要玩原神的发生，到底需要如何做到，不为什么要玩原神的发生，又会如何产生。 卡莱尔在不经意间这样说过，过去一切时代的精华尽在书中。我希望诸位也能好好地体会这句话。 这种事实对本人来说意义重大，相信对这个世界也是有一定意义的。 康德曾经说过，既然我已经踏上这条道路，那么，任何东西都不应妨碍我沿着这条路走下去。我希望诸位也能好好地体会这句话。 我认为。'},
-    {id:'2',title:'绝区零太真实了',content:'我们一般认为，抓住了问题的关键，其他一切则会迎刃而解。 马克思在不经意间这样说过，一切节省，归根到底都归结为时间的节省。我希望诸位也\n能好好地体会这句话。 一般来讲，我们都必须务必慎重的考虑考虑。 既然如此， 就我个人来说，绝区零太真实了对我的\n意义，不能不说非常重大。 一般来讲，我们都必须务必慎重的考虑考虑。 绝区零太真实了因何而发生?本人也是经过了深思熟虑，在每个日日夜夜思考这个问题。 既然如此， 本人也是经过了深思熟虑，在每个日日夜夜思考这个问题。 现在，解决绝区零太真实了的问题，是非常非常重要的。 所以， 问题的关键究竟为何? 每个人都不得不面对这些问题。 在面对这种问题时， 要想清楚，绝区零太真实了，到底是一种怎么样的存在。 而这些并不是完全重要，更加重要的问题是， 俾斯麦在不经意间这样说过，对于不屈不挠的人来说，没有失败这回事。带着这句话，我们还要更加慎重的审视这个问题： 就我个人来说，绝区零太真实了对我的意义，不能不说非常重大。 我们一般认为，抓住了问题的关键，其他一切则会迎刃而解。'}
+    {id:'2',title:'绝区零太真实了',content:'我们一般认为，抓住了问题的关键，其他一切则会迎刃而解。 马克思在不经意间这样说过，一切节省，归根到底都归结为时间的节省。我希望诸位也\n能好好地体会这句话。 一般来讲，我们都必须务必慎重的考虑考虑。 既然如此， 就我个人来说，绝区零太真实了对我的\n意义，不能不说非常重大。 一般来讲，我们都必须务必慎重的考虑考虑。 绝区零太真实了因何而发生?本人也是经过了深思熟虑，在每个日日夜夜思考这个问题。 既然如此， 本人也是经过了深思熟虑，在每个日日夜夜思考这个问题。 现在，解决绝区零太真实了的问题，是非常非常重要的。 所以， 问题的关键究竟为何? 每个人都不得不面对这些问题。 在面对这种问题时， 要想清楚，绝区零太真实了，到底是一种怎么样的存在。 而这些并不是完全重要，更加重要的问题是， 俾斯麦在不经意间这样说过，对于不屈不挠的人来说，没有失败这回事。带着这句话，我们还要更加慎重的审视这个问题： 就我个人来说，绝区零太真实了对我的意义，不能不说非常重大。 我们一般认为，抓住了问题的关键，其他一切则会迎刃而解。'},
+    {id:'3',title:'星穹铁道太好玩了',content:'歌德在不经意间这样说过，读一本好书，就如同和一个高尚的人在交谈。我希望诸位也能好好地体会这句话。 我们一般认为，抓住了问题的关键，\n其他一切则会迎刃而解。 老子在不经意间这样说过，知人者智，自知者明。胜人者有力，自胜者强。我希望诸位也能好好\n地体会这句话。 而这些并不是完全重要，更加重要的问题是， 了解清楚为什么要玩原神到底是一种怎么样的存在，是解决一切问题的关键。 就我个人来说，为什么要玩原神对我的意义，不能不说非常重大。 为什么要玩原神的发生，到底需要如何做到，不为什么要玩原神的发生，又会如何产生。 为什么要玩原神因何而发生?要想清楚，为什么要玩原神，到底是一种怎么样的存在。 我们都知道，只要有意义，那么就必须慎重考虑。 为什么要玩原神的发生，到底需要如何做到，不为什么要玩原神的发生，又会如何产生。 卡莱尔在不经意间这样说过，过去一切时代的精华尽在书中。我希望诸位也能好好地体会这句话。 这种事实对本人来说意义重大，相信对这个世界也是有一定意义的。 康德曾经说过，既然我已经踏上这条道路，那么，任何东西都不应妨碍我沿着这条路走下去。我希望诸位也能好好地体会这句话。 我认为。'},
   ]);   // 创建响应式引用存储博客数据
   
-  onMounted(async () => {   //在页面挂载时获取博客数据
+  onMounted(async () => { //在页面挂载时获取博客数据
     try{
     const response = await axios.get('https://your-api-url.com/blogs');
     blogs.value = response.data;
@@ -171,6 +176,7 @@ const selectedPeopleAge = calculateAge(selectedPeople.value.birthday);
     width: 25vw;
     border-radius: 2vh;
     box-shadow: 2px 2px 10px black;
+    transition: transform 0.5s ease;
   }
   .people{
     margin: 4vh;
@@ -192,7 +198,8 @@ const selectedPeopleAge = calculateAge(selectedPeople.value.birthday);
     width: 30vw;
     border-radius: 2vh;
     height: 20vh;
-    box-shadow: 2px 2px 10px black;
+    box-shadow: 2px 2px 10px black; 
+    transition: transform 0.5s ease;
   }
   .tech{
     margin:1vh 0vh 1vh 2vh ;
@@ -201,6 +208,7 @@ const selectedPeopleAge = calculateAge(selectedPeople.value.birthday);
     border-radius: 2vh;
     display: inline-block;
     font-size: 2vh;
+
   }
   .secondrow{
     height: 20vh;
@@ -220,6 +228,7 @@ const selectedPeopleAge = calculateAge(selectedPeople.value.birthday);
     border-radius: 2vh;
     display: inline-block;
     font-size: 2vh;
+    transition: transform 0.5s ease;
 }
 .thirdrow{
     height: 20vh;
@@ -253,5 +262,24 @@ const selectedPeopleAge = calculateAge(selectedPeople.value.birthday);
     border-radius: 2vh;
     height: auto;
     padding: 1vh;
+    transition: transform 0.5s ease;
+}
+.uid:hover {
+  transform: scale(1.1) translate(-5%, -5%);/* 放大到原始尺寸的110% */
+}
+.techs:hover {
+  transform: scale(1.1) translate(5%, -5%);/* 放大到原始尺寸的110% */
+}
+.thirdrow:hover {
+  transform: scale(1.1) ;
+  transition: transform 0.5s ease;/* 放大到原始尺寸的110% */
+}
+.secondrow:hover {
+  transform: scale(1.1) ;
+  transition: transform 0.5s ease;/* 放大到原始尺寸的110% */
+}
+.blog:hover {
+  transform: scale(1.1) ;
+  transition: transform 0.5s ease;/* 放大到原始尺寸的110% */
 }
 </style>

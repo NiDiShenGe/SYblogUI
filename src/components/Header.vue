@@ -12,7 +12,7 @@
          <el-button :class="activePage === 'thirdPage' ? 'active' : 'unactive'" style="color:grey">弹幕空间</el-button>
        </el-menu-item>
        <el-menu-item @click="goToPage('fourthPage')">
-         <el-button :class="activePage === 'fourthdPage' ? 'active' : 'unactive'" style="color:grey">技术网站</el-button>
+         <el-button :class="activePage === 'fourthPage' ? 'active' : 'unactive'" style="color:grey">技术网站</el-button>
        </el-menu-item>
        <div class="spacer"></div>
        <el-menu-item @click="goToPage('signIn')">
@@ -29,12 +29,20 @@
     import router from '@/router';
     import SvgIcon from './SvgIcon/index.vue'
     import { useRouter } from 'vue-router';
-    import { ref } from 'vue';
+    import { onMounted, ref } from 'vue';
 
     const activePage = ref('firstPage');
 
+    onMounted(() => {
+        const savedPage=localStorage.getItem('activePage');
+        if(savedPage){
+            activePage.value = savedPage;
+        }
+    });
+
     function goToPage(pageName:string){
         activePage.value = pageName;
+        localStorage.setItem('activePage',pageName);
         router.push(
             {
                 name:pageName
